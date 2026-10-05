@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Surya S — Digital Marketing Strategist & AI Automation Expert</title>
+  <meta name="description" content="Surya S — Business Consultant, Digital Marketing Strategist, AI Automation Expert. Founder of AKOON IGNITE & GetWy. Bangalore, IN."/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Syne"', '"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: { brand: '#0084FF', 'brand-d': '#0066CC' }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#fff;color:#0f172a;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;overflow-x:hidden;}
+    h1,h2,h3,.font-outfit{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.03em;}
+    ::selection{background:rgba(0,132,255,.15);color:#0066CC;}
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-thumb{background:#0084FF44;border-radius:3px;}
+
+    /* NAV */
+    .nav-wrap{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(0,0,0,.07);
+      transition:box-shadow .3s;
+    }
+    .nav-wrap.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.08);}
+
+    /* SECTION LABEL */
+    .sec-label{
+      display:inline-block;
+      padding:5px 14px;
+      border-radius:100px;
+      background:rgba(0,132,255,.07);
+      color:#0084FF;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    /* HERO IMAGE ANIMATIONS */
+    @keyframes heroFloat{
+      0%,100%{transform:translateY(0) rotate(-1deg);}
+      50%{transform:translateY(-16px) rotate(-1deg);}
+    }
+    @keyframes heroFloatR{
+      0%,100%{transform:scaleX(-1) translateY(-6px) rotate(1deg);}
+      50%{transform:scaleX(-1) translateY(10px) rotate(1deg);}
+    }
+    .img-float-l{animation:heroFloat 7s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(0,132,255,.18));}
+    .img-float-r{animation:heroFloatR 7.5s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(147,51,234,.15));}
+
+    @keyframes scan{
+      0%{top:-3px;opacity:0;}5%{opacity:1;}95%{opacity:1;}100%{top:100%;opacity:0;}
+    }
+    .scan-box{position:absolute;inset:0;border-radius:20px;overflow:hidden;pointer-events:none;z-index:3;}
+    .scan-box::after{content:'';position:absolute;left:0;right:0;height:2px;top:-3px;
+      background:linear-gradient(90deg,transparent,#0084FF99,transparent);
+      animation:scan 3.5s linear infinite;}
+    .scan-box-r::after{animation-delay:1.8s;background:linear-gradient(90deg,transparent,#9333EA99,transparent);}
+
+    @keyframes pFloat{
+      0%,100%{transform:translate(0,0);opacity:.7;}
+      50%{transform:translate(6px,-14px);opacity:1;}
+    }
+    .dot{position:absolute;border-radius:50%;pointer-events:none;}
+    .dot-a{width:7px;height:7px;background:#0084FF;top:10%;left:5%;animation:pFloat 5s ease-in-out infinite;}
+    .dot-b{width:5px;height:5px;background:#60B1FF;top:65%;left:8%;animation:pFloat 6s ease-in-out infinite 1s;}
+    .dot-c{width:6px;height:6px;background:#10B981;top:80%;left:20%;animation:pFloat 4.5s ease-in-out infinite .5s;}
+    .dot-d{width:7px;height:7px;background:#9333EA;top:10%;right:5%;animation:pFloat 5.5s ease-in-out infinite .3s;}
+    .dot-e{width:5px;height:5px;background:#C084FC;top:65%;right:8%;animation:pFloat 6.5s ease-in-out infinite 1.2s;}
+    .dot-f{width:6px;height:6px;background:#F59E0B;top:80%;right:20%;animation:pFloat 5s ease-in-out infinite .8s;}
+
+    @keyframes ping{0%{transform:scale(1);opacity:1;}100%{transform:scale(3);opacity:0;}}
+    .pulse-dot{position:absolute;width:9px;height:9px;border-radius:50%;z-index:10;}
+    .pulse-dot::before{content:'';position:absolute;inset:-4px;border-radius:50%;animation:ping 1.6s ease-out infinite;}
+    .pd-blue{background:#0084FF;bottom:6%;right:8%;}
+    .pd-blue::before{background:#0084FF44;}
+    .pd-purple{background:#9333EA;bottom:6%;left:8%;}
+    .pd-purple::before{background:#9333EA44;}
+
+    @keyframes badgeUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+    @keyframes badgeDn{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+    .badge-abs{position:absolute;z-index:10;pointer-events:none;white-space:nowrap;}
+    .badge-tl{top:3%;left:-4%;animation:badgeUp 5s ease-in-out infinite;}
+    .badge-bl{bottom:4%;left:-4%;animation:badgeDn 6s ease-in-out infinite;}
+    .badge-tr{top:3%;right:-4%;animation:badgeDn 5.5s ease-in-out infinite;}
+    .badge-br{bottom:4%;right:-4%;animation:badgeUp 5.2s ease-in-out infinite .4s;}
+    @media(max-width:640px){
+      .badge-abs{transform:scale(0.85);transform-origin:center;}
+      .badge-tl{top:-2%;left:-2%;}
+      .badge-bl{bottom:-2%;left:-2%;}
+      .badge-tr{top:-2%;right:-2%;}
+      .badge-br{bottom:-2%;right:-2%;}
+    }
+
+    /* GLASS CARD */
+    .glass{
+      background:linear-gradient(135deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.70) 100%);
+      backdrop-filter:blur(28px) saturate(200%);
+      -webkit-backdrop-filter:blur(28px) saturate(200%);
+      border:1px solid rgba(255,255,255,.8);
+      box-shadow:0 4px 20px rgba(0,0,0,.06),0 1px 0 rgba(255,255,255,.9) inset;
+    }
+
+    /* ZAP DIVIDER */
+    @keyframes zapGlow{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:1;transform:scale(1.15);}}
+    .zap-spin{animation:zapGlow 2.5s ease-in-out infinite;}
+
+    /* TIMELINE */
+    .tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,#0084FF33,#0084FF33,transparent);transform:translateX(-50%);}
+    @media(max-width:768px){.tl-line{left:20px;}}
+
+    /* SKILL TAG */
+    .skill-tag{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 14px;border-radius:100px;
+      background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.07);
+      font-size:13px;font-weight:500;color:#374151;
+      transition:all .2s ease;cursor:default;
+    }
+    .skill-tag:hover{background:rgba(0,132,255,.06);border-color:rgba(0,132,255,.20);color:#0084FF;transform:translateY(-2px);}
+
+    /* SERVICE CARD */
+    .svc-card{
+      padding:24px;border-radius:20px;
+      border:1px solid rgba(0,0,0,.07);
+      background:#fff;
+      transition:all .25s ease;
+      cursor:default;
+    }
+    .svc-card:hover{border-color:rgba(0,132,255,.22);box-shadow:0 8px 32px rgba(0,132,255,.08);transform:translateY(-4px);}
+
+    /* WORK CARD */
+    .work-card{
+      border-radius:24px;overflow:hidden;
+      border:1px solid rgba(0,0,0,.07);
+      background:#fff;
+      transition:all .25s ease;
+    }
+    .work-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.10);transform:translateY(-4px);}
+
+    /* PROCESS STEP */
+    .proc-step{
+      padding:28px;border-radius:20px;
+      border:1px solid rgba(0,0,0,.06);
+      background:#fff;
+      position:relative;
+      transition:all .25s ease;
+    }
+    .proc-step:hover{border-color:rgba(0,132,255,.18);box-shadow:0 8px 32px rgba(0,132,255,.07);}
+
+    /* MARQUEE */
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .marquee-inner{display:flex;gap:32px;animation:marquee 24s linear infinite;width:max-content;}
+
+    /* CONTACT */
+    .contact-input{
+      width:100%;padding:12px 16px;border-radius:14px;
+      border:1px solid rgba(0,0,0,.10);
+      font-family:inherit;font-size:14px;
+      background:rgba(0,0,0,.02);
+      transition:border-color .2s;outline:none;
+    }
+    .contact-input:focus{border-color:#0084FF;background:#fff;}
+    .contact-input::placeholder{color:#9CA3AF;}
+
+    /* SCROLL PROGRESS BAR */
+    #scrollProgress {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0084FF, #9333EA, #EC4899);
+      z-index: 1000;
+      transform-origin: 0% 50%;
+      transform: scaleX(0);
+      transition: transform 0.08s ease-out;
+    }
+
+    /* SCROLL REVEAL ANIMATIONS */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CARD 3D HOVER TILT */
+    .tilt-card {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* TEXT GRADIENT SHIMMER */
+    @keyframes textShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer-text {
+      background: linear-gradient(90deg, #111 0%, #0084FF 50%, #111 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShimmer 6s linear infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Scroll Progress Bar -->
+  <div id="scrollProgress"></div>
+
+  <!-- ══════════════════════════════════════════════════
+       NAV
+  ══════════════════════════════════════════════════ -->
+  <header class="nav-wrap" id="mainNav">
+    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 h-16 flex items-center justify-between gap-6">
+
+      <!-- Logo -->
+      <a href="#top" class="font-outfit font-black text-[20px] tracking-tight text-black flex items-center gap-1.5">
+        <i data-lucide="zap" class="w-5 h-5 text-brand"></i>
+        Surya S
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="#about"     class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">About</a>
+        <a href="#timeline"  class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Timeline</a>
+        <a href="#expertise" class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Expertise</a>
+        <a href="#services"  class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Services</a>
+        <a href="#work"      class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Work</a>
+        <a href="#process"   class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Process</a>
+        <a href="#contact"   class="text-[13px] font-medium text-black/55 hover:text-black transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA + Mobile trigger -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/916383267735" target="_blank" rel="noopener noreferrer"
+           class="hidden sm:flex h-9 px-5 rounded-xl bg-brand hover:bg-brand-d text-white font-semibold text-[13px] items-center gap-1.5 transition-all hover:shadow-lg hover:shadow-brand/25">
+          Let's Talk
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <button id="navToggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-xl bg-black/5 border border-black/8">
+          <i data-lucide="menu" class="w-4 h-4 text-black"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mOverlay" class="fixed inset-0 z-[90] bg-black/25 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"></div>
+  <aside id="mDrawer" class="fixed top-0 right-0 bottom-0 z-[100] w-[260px] bg-white border-l border-black/8 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col pt-16 pb-8 px-5">
+    <button id="mClose" class="absolute top-4 right-4 w-9 h-9 rounded-xl bg-black/5 flex items-center justify-center">
+      <i data-lucide="x" class="w-4 h-4"></i>
+    </button>
+    <div class="font-outfit font-black text-[20px] text-black mb-7 flex items-center gap-1.5">
+      <i data-lucide="zap" class="w-5 h-5 text-brand"></i> Surya S
+    </div>
+    <nav class="flex flex-col gap-0.5">
+      <a href="#about"     class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">About</a>
+      <a href="#timeline"  class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Timeline</a>
+      <a href="#expertise" class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Expertise</a>
+      <a href="#services"  class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Services</a>
+      <a href="#work"      class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Work</a>
+      <a href="#process"   class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Process</a>
+      <a href="#contact"   class="px-3 py-2.5 rounded-xl text-[14px] font-medium text-black/70 hover:bg-black/4 hover:text-black">Contact</a>
+    </nav>
+    <div class="mt-auto">
+      <a href="https://wa.me/916383267735" target="_blank" class="w-full h-11 rounded-xl bg-brand text-white font-semibold text-[14px] flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════ -->
+  <section id="top" class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+      <!-- Left copy -->
+      <div class="lg:col-span-5 flex flex-col items-start">
+        <!-- Status badge -->
+        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/[0.04] border border-black/[0.06] mb-6 w-fit">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-[12px] font-medium text-black/70">Available for select projects — 2026</span>
+        </div>
+
+        <h1 class="font-display font-extrabold text-[44px] sm:text-[56px] lg:text-[72px] leading-[1.03] tracking-[-3.5px] text-black mb-3">
+          Hi, I'm<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-900 to-brand">Surya S</span>
+        </h1>
+
+        <p class="text-[14px] font-mono font-bold uppercase tracking-widest text-brand mb-4">
+          Business Consultant · AI Automation Expert
+        </p>
+
+        <p class="text-[16px] text-black/60 leading-relaxed tracking-[-0.3px] mb-8 max-w-[460px]">
+          Helping brands grow through strategic marketing, intelligent automation, AI integration, and high-converting digital experiences. Founder of <strong class="text-black font-semibold">AKOON IGNITE</strong> &amp; <strong class="text-black font-semibold">GetWy</strong>.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3 mb-10">
+          <a href="https://wa.me/916383267735" target="_blank" rel="noopener noreferrer"
+             class="h-12 pl-6 pr-4 rounded-2xl bg-brand hover:bg-brand-d text-white font-bold text-[15px] flex items-center gap-3 transition-all hover:shadow-xl hover:shadow-brand/25 hover:-translate-y-0.5">
+            Let's Talk
+            <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand"></i>
+            </span>
+          </a>
+          <a href="#work" class="h-12 px-6 rounded-2xl border border-black/10 bg-black/[0.03] hover:bg-black/[0.06] text-black font-semibold text-[15px] flex items-center gap-2 transition-all">
+            <i data-lucide="folder-kanban" class="w-4 h-4 text-brand"></i>
+            View Portfolio
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex items-center gap-6 pt-8 border-t border-black/[0.06] w-full">
+          <div>
+            <div class="font-outfit font-black text-[26px] tracking-tight text-black">4+</div>
+            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wide mt-0.5">Years Exp</div>
+          </div>
+          <div class="w-px h-8 bg-black/8"></div>
+          <div>
+            <div class="font-outfit font-black text-[26px] tracking-tight text-black">40+</div>
+            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wide mt-0.5">Projects</div>
+          </div>
+          <div class="w-px h-8 bg-black/8"></div>
+          <div>
+            <div class="font-outfit font-black text-[26px] tracking-tight text-black">15+</div>
+            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wide mt-0.5">Brands</div>
+          </div>
+          <div class="w-px h-8 bg-black/8"></div>
+          <div>
+            <div class="font-outfit font-black text-[26px] tracking-tight text-black">100+</div>
+            <div class="text-[11px] font-mono text-neutral-400 uppercase tracking-wide mt-0.5">Campaigns</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: dual animated images -->
+      <div class="lg:col-span-7 flex items-center justify-center gap-4 lg:gap-5 py-6">
+
+        <!-- LEFT IMAGE -->
+        <div class="relative flex-1 max-w-[290px] lg:max-w-[320px]" style="isolation:isolate;">
+          <div class="scan-box"></div>
+          <div class="dot dot-a"></div><div class="dot dot-b"></div><div class="dot dot-c"></div>
+          <img src="marketing_ai_hub.png" alt="Digital Marketing Engine"
+               class="img-float-l w-full h-auto object-contain rounded-[20px] relative z-[2]"/>
+          <!-- Badges -->
+          <div class="badge-abs badge-tl glass px-3 py-2 rounded-[14px] flex items-center gap-2">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-brand to-brand-d flex items-center justify-center shrink-0">
+              <i data-lucide="trending-up" class="w-3 h-3 text-white"></i>
+            </div>
+            <div>
+              <div class="text-[11px] font-black text-black">4.2× ROAS</div>
+              <div class="text-[9px] text-neutral-400">Meta &amp; Google Ads</div>
+            </div>
+          </div>
+          <div class="badge-abs badge-bl glass px-3 py-2 rounded-[14px] flex items-center gap-2">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shrink-0">
+              <i data-lucide="cpu" class="w-3 h-3 text-white"></i>
+            </div>
+            <div>
+              <div class="text-[11px] font-black text-black">AI Growth Engine</div>
+              <div class="text-[9px] text-neutral-400">n8n &amp; CRM Flows</div>
+            </div>
+          </div>
+          <div class="pulse-dot pd-blue"></div>
+        </div>
+
+        <!-- ZAP CENTER -->
+        <div class="hidden lg:flex flex-col items-center gap-2 flex-shrink-0">
+          <div class="w-px h-20 bg-gradient-to-b from-transparent via-brand/25 to-transparent"></div>
+          <div class="w-8 h-8 rounded-full bg-brand/10 border border-brand/20 flex items-center justify-center zap-spin">
+            <i data-lucide="zap" class="w-4 h-4 text-brand"></i>
+          </div>
+          <div class="w-px h-20 bg-gradient-to-b from-transparent via-brand/25 to-transparent"></div>
+        </div>
+
+        <!-- RIGHT IMAGE (mirrored) - Hidden on extra-small mobile, visible on sm and up -->
+        <div class="relative flex-1 max-w-[290px] lg:max-w-[320px] hidden sm:block" style="isolation:isolate;">
+          <div class="scan-box scan-box-r"></div>
+          <div class="dot dot-d"></div><div class="dot dot-e"></div><div class="dot dot-f"></div>
+          <img src="marketing_ai_hub.png" alt="AI Marketing Funnel"
+               class="img-float-r w-full h-auto object-contain rounded-[20px] relative z-[2]"/>
+          <div class="badge-abs badge-tr glass px-3 py-2 rounded-[14px] flex items-center gap-2">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center shrink-0">
+              <i data-lucide="search" class="w-3 h-3 text-white"></i>
+            </div>
+            <div>
+              <div class="text-[11px] font-black text-black">180+ Page 1 Ranks</div>
+              <div class="text-[9px] text-neutral-400">SEO &amp; Inbound</div>
+            </div>
+          </div>
+          <div class="badge-abs badge-br glass px-3 py-2 rounded-[14px] flex items-center gap-2">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shrink-0">
+              <i data-lucide="bar-chart-2" class="w-3 h-3 text-white"></i>
+            </div>
+            <div>
+              <div class="text-[11px] font-black text-black">100+ Campaigns</div>
+              <div class="text-[9px] text-neutral-400">Google &amp; Meta</div>
+            </div>
+          </div>
+          <div class="pulse-dot pd-purple"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       MARQUEE — TRUSTED BRANDS
+  ══════════════════════════════════════════════════ -->
+  <section class="border-y border-black/[0.05] py-5 overflow-hidden bg-black/[0.015]">
+    <p class="text-center text-[10px] font-mono text-neutral-400 uppercase tracking-widest mb-4">Trusted by ambitious brands</p>
+    <div style="overflow:hidden;">
+      <div class="marquee-inner">
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">AKOON IGNITE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">GetWy</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Vaishno Group</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">House of Mango Tree</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">KARE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">ILIFE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">WordFunds</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Superryze</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Abinam Healthcare</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Annapoorna APT</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Kavya Bridals</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Adveratech Solutions</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <!-- repeat -->
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">AKOON IGNITE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">GetWy</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Vaishno Group</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">House of Mango Tree</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">KARE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">ILIFE</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">WordFunds</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Superryze</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Abinam Healthcare</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Annapoorna APT</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Kavya Bridals</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">·</span>
+        <span class="text-[13px] font-semibold text-black/40 shrink-0">Adveratech Solutions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════ -->
+  <section id="about" class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+    <!-- 2-Column Layout: Portrait Image on Left + Bio Copy on Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+
+      <!-- Left: Authentic Portrait Card -->
+      <div class="lg:col-span-5">
+        <div class="relative group rounded-[32px] overflow-hidden border border-black/[0.08] bg-neutral-900 shadow-2xl shadow-black/10">
+          <div class="aspect-[4/5] w-full overflow-hidden relative">
+            <img src="surya-portrait-v2.png" alt="Surya S — Marketing Strategist & AI Automation Expert"
+                 class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <!-- Floating status badge -->
+            <div class="absolute top-5 right-5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[11px] font-medium text-white flex items-center gap-2 shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Bangalore, IN
+            </div>
+
+            <!-- Overlay card details -->
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <div class="font-outfit font-black text-[26px] tracking-tight">Surya S</div>
+              <div class="text-[13px] text-white/80 font-medium mt-0.5">Founder · Strategist · Consultant</div>
+              <div class="mt-4 pt-3.5 border-t border-white/15 flex items-center justify-between text-[12px] text-white/70">
+                <span>AKOON IGNITE &amp; GetWy</span>
+                <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bio Copy & Tags -->
+      <div class="lg:col-span-7 flex flex-col justify-center">
+        <div class="flex flex-wrap gap-2.5 mb-6">
+          <span class="px-3.5 py-1.5 rounded-full bg-brand/10 text-brand text-[12px] font-semibold">Growth Focused</span>
+          <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[12px] font-semibold">ROI Focused</span>
+          <span class="px-3.5 py-1.5 rounded-full bg-violet-500/10 text-violet-600 text-[12px] font-semibold">Automation First</span>
+          <span class="px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-600 text-[12px] font-semibold">Growth Mindset</span>
+        </div>
+
+        <h2 class="font-outfit font-black text-[34px] sm:text-[44px] tracking-[-2px] leading-[1.1] text-black mb-6">
+          Marketing meets<br/>machine intelligence.
+        </h2>
+
+        <div class="space-y-4 text-[16px] text-black/70 leading-relaxed max-w-[620px]">
+          <p>
+            Hey, I'm Surya — based out of <strong class="text-black font-semibold">Bangalore</strong>. I spend most of my day helping founders and marketing teams figure out what's actually working, and quietly kill everything that isn't.
+          </p>
+          <p>
+            For the last four years I've worked across healthcare, real estate, retail, finance and D2C — running SEO, paid ads, websites, social, and lately a lot of AI automation. I'm less into buzzwords and more into building things that keep running after I log off: clean funnels, sharp positioning, and workflows that stop wasting your team's time.
+          </p>
+          <p>
+            I also run <strong class="text-black font-semibold">AKOON IGNITE</strong> and <strong class="text-black font-semibold">GetWy</strong> — two small bets on the idea that good marketing should feel a little more human and a lot less like a template. If you're building something interesting, I'd love to hear about it.
+          </p>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-black/[0.06] flex flex-wrap items-center gap-4">
+          <a href="https://wa.me/916383267735" target="_blank" rel="noopener noreferrer"
+             class="h-11 px-6 rounded-xl bg-brand hover:bg-brand-d text-white font-semibold text-[14px] inline-flex items-center gap-2 transition-all shadow-md shadow-brand/20">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> Let's Talk
+          </a>
+          <a href="mailto:suryadigitalapex@gmail.com"
+             class="h-11 px-5 rounded-xl border border-black/10 hover:bg-black/[0.04] text-black font-medium text-[14px] inline-flex items-center gap-2 transition-all">
+            <i data-lucide="mail" class="w-4 h-4 text-brand"></i> suryadigitalapex@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       TIMELINE (ALTERNATING ZIGZAG WITH CENTER LINE)
+  ══════════════════════════════════════════════════ -->
+  <section id="timeline" class="py-28 bg-[#fafafa] border-t border-black/[0.05] relative overflow-hidden">
+    <div class="max-w-[1100px] mx-auto px-6 sm:px-10 lg:px-16">
+
+      <!-- Section Heading -->
+      <div class="text-center mb-20">
+        <span class="sec-label">Timeline</span>
+        <h2 class="font-outfit font-black text-[38px] sm:text-[50px] tracking-[-2px] leading-tight text-black">
+          Four years of <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-600 to-pink-500">momentum.</span>
+        </h2>
+      </div>
+
+      <!-- Timeline Container with Continuous Center Line & Alternating Cards -->
+      <div class="relative">
+
+        <!-- Continuous Vertical Glowing Spine -->
+        <div class="absolute left-6 md:left-1/2 top-4 bottom-4 w-[2px] -translate-x-1/2 bg-gradient-to-b from-brand via-purple-500 to-pink-500"></div>
+
+        <div class="space-y-12 md:space-y-16">
+
+          <!-- 1. 2025 — Now (LEFT CARD) -->
+          <div class="relative flex flex-col md:flex-row items-start md:items-center">
+            <!-- Center Node Point -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand ring-4 ring-white shadow-[0_0_12px_rgba(0,132,255,0.8)] z-10"></div>
+            <!-- Card -->
+            <div class="pl-14 md:pl-0 md:w-1/2 md:pr-14 w-full">
+              <div class="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-brand/30 transition-all duration-300 group">
+                <div class="text-[12px] font-mono font-bold text-brand uppercase tracking-wider mb-2">2025 — Now</div>
+                <h3 class="font-outfit font-bold text-[22px] tracking-tight text-black group-hover:text-brand transition-colors">Founder</h3>
+                <div class="text-[13px] font-semibold text-neutral-400 mb-3">AKOON IGNITE &amp; GetWy</div>
+                <p class="text-[14px] text-black/60 leading-relaxed">Building marketing &amp; automation studios helping brands scale with AI-first systems.</p>
+              </div>
+            </div>
+            <!-- Empty Spacer on other side -->
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+
+          <!-- 2. 2024 (RIGHT CARD) -->
+          <div class="relative flex flex-col md:flex-row items-start md:items-center">
+            <!-- Center Node Point -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-white shadow-[0_0_12px_rgba(168,85,247,0.8)] z-10"></div>
+            <!-- Empty Spacer on left -->
+            <div class="hidden md:block md:w-1/2"></div>
+            <!-- Card on right -->
+            <div class="pl-14 md:pl-14 md:w-1/2 w-full">
+              <div class="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-purple-500/30 transition-all duration-300 group">
+                <div class="text-[12px] font-mono font-bold text-purple-600 uppercase tracking-wider mb-2">2024</div>
+                <h3 class="font-outfit font-bold text-[22px] tracking-tight text-black group-hover:text-purple-600 transition-colors">AI Automation Expert</h3>
+                <div class="text-[13px] font-semibold text-neutral-400 mb-3">Independent</div>
+                <p class="text-[14px] text-black/60 leading-relaxed">Designing intelligent workflows using n8n, Zapier, CRM automation and AI agents.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 2023 (LEFT CARD) -->
+          <div class="relative flex flex-col md:flex-row items-start md:items-center">
+            <!-- Center Node Point -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white shadow-[0_0_12px_rgba(16,185,129,0.8)] z-10"></div>
+            <!-- Card on left -->
+            <div class="pl-14 md:pl-0 md:w-1/2 md:pr-14 w-full">
+              <div class="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 group">
+                <div class="text-[12px] font-mono font-bold text-emerald-600 uppercase tracking-wider mb-2">2023</div>
+                <h3 class="font-outfit font-bold text-[22px] tracking-tight text-black group-hover:text-emerald-600 transition-colors">Business Consultant</h3>
+                <div class="text-[13px] font-semibold text-neutral-400 mb-3">Multi-industry</div>
+                <p class="text-[14px] text-black/60 leading-relaxed">Advising founders on funnels, revenue planning and go-to-market strategy.</p>
+              </div>
+            </div>
+            <!-- Empty Spacer on other side -->
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+
+          <!-- 4. 2022 (RIGHT CARD) -->
+          <div class="relative flex flex-col md:flex-row items-start md:items-center">
+            <!-- Center Node Point -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-500 ring-4 ring-white shadow-[0_0_12px_rgba(245,158,11,0.8)] z-10"></div>
+            <!-- Empty Spacer on left -->
+            <div class="hidden md:block md:w-1/2"></div>
+            <!-- Card on right -->
+            <div class="pl-14 md:pl-14 md:w-1/2 w-full">
+              <div class="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-amber-500/30 transition-all duration-300 group">
+                <div class="text-[12px] font-mono font-bold text-amber-600 uppercase tracking-wider mb-2">2022</div>
+                <h3 class="font-outfit font-bold text-[22px] tracking-tight text-black group-hover:text-amber-600 transition-colors">Performance Marketing Expert</h3>
+                <div class="text-[13px] font-semibold text-neutral-400 mb-3">Agency &amp; Freelance</div>
+                <p class="text-[14px] text-black/60 leading-relaxed">Managing Google, Meta and shopping ads for eCommerce and B2B brands.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. 2021 (LEFT CARD) -->
+          <div class="relative flex flex-col md:flex-row items-start md:items-center">
+            <!-- Center Node Point -->
+            <div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-rose-500 ring-4 ring-white shadow-[0_0_12px_rgba(244,63,94,0.8)] z-10"></div>
+            <!-- Card on left -->
+            <div class="pl-14 md:pl-0 md:w-1/2 md:pr-14 w-full">
+              <div class="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-rose-500/30 transition-all duration-300 group">
+                <div class="text-[12px] font-mono font-bold text-rose-500 uppercase tracking-wider mb-2">2021</div>
+                <h3 class="font-outfit font-bold text-[22px] tracking-tight text-black group-hover:text-rose-500 transition-colors">SEO Specialist &amp; Web Designer</h3>
+                <div class="text-[13px] font-semibold text-neutral-400 mb-3">Client work</div>
+                <p class="text-[14px] text-black/60 leading-relaxed">Building websites, technical SEO systems, and ranking pages that convert.</p>
+              </div>
+            </div>
+            <!-- Empty Spacer on other side -->
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       EXPERTISE
+  ══════════════════════════════════════════════════ -->
+  <section id="expertise" class="bg-black/[0.015] border-y border-black/[0.05]">
+    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+      <div class="text-center mb-12">
+        <span class="sec-label">Expertise</span>
+        <h2 class="font-outfit font-black text-[36px] sm:text-[44px] tracking-[-2px] leading-[1.08] text-black">A full-stack marketing operator.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-white rounded-2xl p-5 border border-black/[0.06]">
+          <div class="w-9 h-9 rounded-xl bg-brand/10 flex items-center justify-center mb-3">
+            <i data-lucide="search" class="w-4 h-4 text-brand"></i>
+          </div>
+          <h4 class="font-outfit font-bold text-[15px] text-black mb-3">SEO</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag text-[11px] px-2.5 py-1">Technical SEO</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">On-Page SEO</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Off-Page SEO</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Local SEO</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">eCommerce SEO</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Keyword Research</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Content Strategy</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-black/[0.06]">
+          <div class="w-9 h-9 rounded-xl bg-amber-500/10 flex items-center justify-center mb-3">
+            <i data-lucide="target" class="w-4 h-4 text-amber-500"></i>
+          </div>
+          <h4 class="font-outfit font-bold text-[15px] text-black mb-3">Performance Marketing</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag text-[11px] px-2.5 py-1">Google Ads</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Meta Ads</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Lead Generation</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Remarketing</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Shopping Ads</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Conversion Tracking</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-black/[0.06]">
+          <div class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center mb-3">
+            <i data-lucide="cpu" class="w-4 h-4 text-violet-500"></i>
+          </div>
+          <h4 class="font-outfit font-bold text-[15px] text-black mb-3">AI Automation</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag text-[11px] px-2.5 py-1">n8n</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Zapier</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">CRM Automation</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">WhatsApp Automation</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">AI Agents</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Chatbots</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-black/[0.06]">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-3">
+            <i data-lucide="bar-chart-2" class="w-4 h-4 text-emerald-500"></i>
+          </div>
+          <h4 class="font-outfit font-bold text-[15px] text-black mb-3">Analytics &amp; Web</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-tag text-[11px] px-2.5 py-1">GA4</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Looker Studio</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Attribution</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">WordPress</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">WooCommerce</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">Landing Pages</span>
+            <span class="skill-tag text-[11px] px-2.5 py-1">CRO</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════════════════ -->
+  <section id="services" class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+    <div class="text-center mb-12">
+      <span class="sec-label">Services</span>
+      <h2 class="font-outfit font-black text-[36px] sm:text-[44px] tracking-[-2px] leading-[1.08] text-black mb-3">Every lever, one operator.</h2>
+      <p class="text-[15px] text-black/50 max-w-[420px] mx-auto">End-to-end marketing &amp; automation services for ambitious brands.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
+          <i data-lucide="search" class="w-5 h-5 text-brand"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">SEO Consulting</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Full-funnel organic strategy — technical, on-page, and content.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="target" class="w-5 h-5 text-amber-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">Performance Marketing</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Google &amp; Meta ads engineered for ROAS.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="cpu" class="w-5 h-5 text-violet-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">AI Automation</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">n8n, Zapier, custom agents &amp; smart workflows.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="globe" class="w-5 h-5 text-emerald-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">Website Development</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">WordPress, WooCommerce, high-converting landing pages.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="palette" class="w-5 h-5 text-rose-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">Brand Strategy</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Positioning, messaging, and visual language.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="briefcase" class="w-5 h-5 text-sky-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">Business Consulting</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Funnels, revenue planning, and growth systems.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-orange-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">CRO</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Turn traffic into revenue with conversion optimisation.</p>
+      </div>
+      <div class="svc-card">
+        <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center mb-4">
+          <i data-lucide="instagram" class="w-5 h-5 text-pink-500"></i>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-1.5">Social Media</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Content, growth strategy &amp; community building.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       WORK / CASE STUDIES
+  ══════════════════════════════════════════════════ -->
+  <section id="work" class="bg-black/[0.015] border-y border-black/[0.05]">
+    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+      <div class="text-center mb-12">
+        <span class="sec-label">Featured Work</span>
+        <h2 class="font-outfit font-black text-[36px] sm:text-[44px] tracking-[-2px] leading-[1.08] text-black mb-3">Case studies that compound.</h2>
+        <p class="text-[15px] text-black/50 max-w-[380px] mx-auto">Real results from real campaigns — no vanity metrics.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Case 1 -->
+        <div class="work-card">
+          <div class="h-36 bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center">
+              <i data-lucide="building-2" class="w-7 h-7 text-brand"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-brand/8 text-brand text-[11px] font-semibold">Real Estate</span>
+            </div>
+            <h4 class="font-outfit font-bold text-[18px] text-black mb-1">Vaishno Group</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[11px] text-neutral-400 font-medium">Digital Strategy</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">Lead Generation</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">Campaigns</span>
+            </div>
+            <div class="space-y-2 text-[13px] mb-4">
+              <p><span class="font-semibold text-black/70">Challenge</span> <span class="text-black/50">· Fragmented digital presence and inconsistent lead flow.</span></p>
+              <p><span class="font-semibold text-black/70">Solution</span> <span class="text-black/50">· Built a full-funnel lead generation engine with paid + organic.</span></p>
+            </div>
+            <div class="pt-3 border-t border-black/[0.06]">
+              <span class="font-outfit font-black text-[22px] text-brand">3.2×</span>
+              <span class="text-[12px] text-neutral-400 ml-2">qualified leads within 90 days</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="work-card">
+          <div class="h-36 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center">
+              <i data-lucide="landmark" class="w-7 h-7 text-emerald-500"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/8 text-emerald-600 text-[11px] font-semibold">Finance</span>
+            </div>
+            <h4 class="font-outfit font-bold text-[18px] text-black mb-1">Annapoorna APT</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[11px] text-neutral-400 font-medium">Website Strategy</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">Digital Marketing</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">Leads</span>
+            </div>
+            <div class="space-y-2 text-[13px] mb-4">
+              <p><span class="font-semibold text-black/70">Challenge</span> <span class="text-black/50">· Low online trust and weak lead capture.</span></p>
+              <p><span class="font-semibold text-black/70">Solution</span> <span class="text-black/50">· Rebuilt website with conversion-first architecture.</span></p>
+            </div>
+            <div class="pt-3 border-t border-black/[0.06]">
+              <span class="font-outfit font-black text-[22px] text-emerald-500">2.4×</span>
+              <span class="text-[12px] text-neutral-400 ml-2">conversion rate uplift</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="work-card">
+          <div class="h-36 bg-gradient-to-br from-rose-500/10 to-rose-500/5 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center">
+              <i data-lucide="heart" class="w-7 h-7 text-rose-500"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/8 text-rose-600 text-[11px] font-semibold">Fashion</span>
+            </div>
+            <h4 class="font-outfit font-bold text-[18px] text-black mb-1">Kavya Bridals</h4>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              <span class="text-[11px] text-neutral-400 font-medium">Brand</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">Social</span>
+              <span class="text-neutral-200">·</span>
+              <span class="text-[11px] text-neutral-400 font-medium">SEO</span>
+            </div>
+            <div class="space-y-2 text-[13px] mb-4">
+              <p><span class="font-semibold text-black/70">Challenge</span> <span class="text-black/50">· Undifferentiated brand in a saturated market.</span></p>
+              <p><span class="font-semibold text-black/70">Solution</span> <span class="text-black/50">· Repositioned brand with sharp identity and organic growth engine.</span></p>
+            </div>
+            <div class="pt-3 border-t border-black/[0.06]">
+              <span class="font-outfit font-black text-[22px] text-rose-500">180%</span>
+              <span class="text-[12px] text-neutral-400 ml-2">organic reach increase</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       PROCESS
+  ══════════════════════════════════════════════════ -->
+  <section id="process" class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+    <div class="text-center mb-12">
+      <span class="sec-label">Process</span>
+      <h2 class="font-outfit font-black text-[36px] sm:text-[44px] tracking-[-2px] leading-[1.08] text-black mb-3">How I work.</h2>
+      <p class="text-[15px] text-black/50 max-w-[360px] mx-auto">A clean, repeatable system built on clarity and compounding results.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="proc-step">
+        <div class="w-8 h-8 rounded-xl bg-brand flex items-center justify-center mb-4 shadow-md shadow-brand/25">
+          <span class="text-white font-mono font-bold text-[13px]">01</span>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-2">Discover</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Deep-dive into your business, audience, competitors, and current gaps. No assumptions.</p>
+      </div>
+      <div class="proc-step">
+        <div class="w-8 h-8 rounded-xl bg-violet-500 flex items-center justify-center mb-4 shadow-md shadow-violet-500/25">
+          <span class="text-white font-mono font-bold text-[13px]">02</span>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-2">Strategise</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Build a clear roadmap — channels, budgets, KPIs, and 90-day milestones that make sense.</p>
+      </div>
+      <div class="proc-step">
+        <div class="w-8 h-8 rounded-xl bg-emerald-500 flex items-center justify-center mb-4 shadow-md shadow-emerald-500/25">
+          <span class="text-white font-mono font-bold text-[13px]">03</span>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-2">Execute</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Launch campaigns, build automations, and ship content. Fast iteration, tight feedback loops.</p>
+      </div>
+      <div class="proc-step">
+        <div class="w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center mb-4 shadow-md shadow-amber-500/25">
+          <span class="text-white font-mono font-bold text-[13px]">04</span>
+        </div>
+        <h4 class="font-outfit font-bold text-[16px] text-black mb-2">Scale &amp; Compound</h4>
+        <p class="text-[13px] text-black/50 leading-relaxed">Double down on what works. Kill what doesn't. Build systems that keep growing after I log off.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════ -->
+  <section id="contact" class="bg-black/[0.015] border-t border-black/[0.05]">
+    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+        <div>
+          <span class="sec-label">Contact</span>
+          <h2 class="font-outfit font-black text-[36px] sm:text-[44px] tracking-[-2px] leading-[1.08] text-black mb-4">
+            Let's build<br/>something great.
+          </h2>
+          <p class="text-[15px] text-black/55 leading-relaxed mb-8 max-w-[400px]">
+            If you're building something interesting and want a focused growth partner — reach out. I respond fast.
+          </p>
+
+          <div class="flex flex-col gap-4">
+            <a href="https://wa.me/916383267735" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-4 p-4 rounded-2xl border border-black/[0.07] bg-white hover:border-brand/25 hover:shadow-md transition-all group">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/15 transition-colors">
+                <i data-lucide="message-circle" class="w-5 h-5 text-emerald-500"></i>
+              </div>
+              <div>
+                <div class="text-[13px] font-bold text-black">WhatsApp</div>
+                <div class="text-[12px] text-neutral-400">+91 63832 67735 · Fastest way to reach me</div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-neutral-300 ml-auto group-hover:text-brand transition-colors"></i>
+            </a>
+
+            <div class="flex items-center gap-4 p-4 rounded-2xl border border-black/[0.07] bg-white">
+              <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-brand"></i>
+              </div>
+              <div>
+                <div class="text-[13px] font-bold text-black">Location</div>
+                <div class="text-[12px] text-neutral-400">Bangalore, India · Open to remote projects worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="bg-white rounded-2xl border border-black/[0.07] p-7 shadow-sm" onsubmit="handleForm(event)">
+          <h3 class="font-outfit font-bold text-[20px] text-black mb-5">Send a message</h3>
+          <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[12px] font-semibold text-black/60 mb-1.5">Your Name</label>
+                <input type="text" placeholder="Arjun Kumar" class="contact-input" required/>
+              </div>
+              <div>
+                <label class="block text-[12px] font-semibold text-black/60 mb-1.5">Email</label>
+                <input type="email" placeholder="you@company.com" class="contact-input" required/>
+              </div>
+            </div>
+            <div>
+              <label class="block text-[12px] font-semibold text-black/60 mb-1.5">What do you need help with?</label>
+              <select class="contact-input">
+                <option>SEO &amp; Content Strategy</option>
+                <option>Performance Marketing</option>
+                <option>AI Automation</option>
+                <option>Website Development</option>
+                <option>Business Consulting</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[12px] font-semibold text-black/60 mb-1.5">Message</label>
+              <textarea placeholder="Tell me about your project, goals, and timeline…" rows="4" class="contact-input resize-none" required></textarea>
+            </div>
+            <button type="submit"
+                    class="w-full h-11 rounded-xl bg-brand hover:bg-brand-d text-white font-semibold text-[14px] flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-brand/25 active:scale-95">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Send Message
+            </button>
+          </div>
+          <div id="formSuccess" class="hidden mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-[13px] font-medium text-center">
+            ✓ Message sent! I'll reply within 24 hours.
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="border-t border-black/[0.06] bg-white">
+    <div class="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-outfit font-black text-[18px] text-black flex items-center gap-1.5">
+        <i data-lucide="zap" class="w-4 h-4 text-brand"></i> Surya S
+      </div>
+      <p class="text-[12px] text-neutral-400">© 2026 Surya S All rights reserved. · Bangalore, India</p>
+      <div class="flex items-center gap-5">
+        <a href="https://wa.me/916383267735" target="_blank" class="text-[12px] text-neutral-400 hover:text-black transition-colors">WhatsApp</a>
+        <a href="#work" class="text-[12px] text-neutral-400 hover:text-black transition-colors">Portfolio</a>
+        <a href="#contact" class="text-[12px] text-neutral-400 hover:text-black transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      // Nav scroll
+      window.addEventListener('scroll', () => {
+        document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+
+      // Mobile drawer
+      const toggle = document.getElementById('navToggle');
+      const drawer = document.getElementById('mDrawer');
+      const overlay = document.getElementById('mOverlay');
+      const close = document.getElementById('mClose');
+
+      function openDrawer() {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        requestAnimationFrame(() => overlay.classList.add('opacity-100'));
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.remove('opacity-100');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+        document.body.style.overflow = '';
+      }
+
+      toggle?.addEventListener('click', openDrawer);
+      close?.addEventListener('click', closeDrawer);
+      overlay?.addEventListener('click', closeDrawer);
+
+      // Close drawer on nav link click
+      document.querySelectorAll('#mDrawer a').forEach(a => a.addEventListener('click', closeDrawer));
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+      // Scroll Progress Bar
+      const progressBar = document.getElementById('scrollProgress');
+      window.addEventListener('scroll', () => {
+        const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalScroll > 0 ? (window.scrollY / totalScroll) : 0;
+        if (progressBar) {
+          progressBar.style.transform = `scaleX(${progress})`;
+        }
+      }, { passive: true });
+
+      // Scroll Reveal Animation (IntersectionObserver)
+      const revealTargets = document.querySelectorAll(
+        'section, .work-card, .svc-card, .proc-step, #about > div, #timeline .space-y-12 > div, #expertise .grid > div'
+      );
+      revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.12
+      });
+
+      revealTargets.forEach(el => observer.observe(el));
+
+      // 3D Card Hover Tilt Animation
+      const tiltCards = document.querySelectorAll('.work-card, .svc-card, .proc-step');
+      tiltCards.forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+          card.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    });
+
+    // Contact form
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('formSuccess').classList.remove('hidden');
+        e.target.reset();
+        btn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i> Send Message';
+        btn.disabled = false;
+        lucide.createIcons();
+      }, 1200);
+    }
+  </script>
+
+</body>
+</html>
